@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Review Form</title>
+<link th:href="@{/styles/css/indexStyleSheet.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id ="allPage"style="width:980px; margin-left:auto; margin-right:auto;">
+<header>
+<h1>Add Reviews</h1>
+</header>
+      
+<form id = "allform" style ="height:500px; text-align:center;" th:action="@{/add2}" action="#" th:object="${review}" method="post">
+
+<br>
+<label>Product ID: </label> &nbsp;
+<label th:text="${product.id}"></label><br><br>
+
+<label>Product Name: </label><br>
+<label th:text="${product.name}"></label><br><br>
+
+
+  <label for="userNo">User No:</label><br>
+  <input style="width:400px; height:20px;" type="text" id="userNo" name="userNo" placeholder="Enter the Product Id" field="*{userNo}" required/><br><br>
+  
+  <label for="user">User:</label><br>
+  <input style="width:400px; height:20px;" type="text" id="user" name="user" placeholder="Enter the your name" field="*{user}" required/><br><br>
+  
+  <label for="comment">Comment:</label><br>
+  <input style="width:400px; height:20px;" type="text" id="comment" name="comment" placeholder="Enter the comment" field="*{comment}" required/><br><br>
+  
+  <label for="rating">Rating (0 - 10): </label><br>
+  <input style="width:400px; height:20px;" type="number" min=0 max=10 id="rating" name="rating" placeholder="Rate the product" field="*{rating}" required/><br><br>
+  
+<br>
+  <div style="text-align:center;">
+  <input id="btnAdd" name="btnAdd" type="submit" value="Add Review"/>
+  <br>
+  <br>
+  </div>
+</form>
+      
+      </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Form</title>
+<link th:href="@{/styles/css/indexStyleSheet.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+      <div id ="allPage"style="width:980px; margin-left:auto; margin-right:auto;">
+      <h1> Display Data</h1>
+      
+      
+<!--       <h3 th:text="${message}"> Hello </h3>
+      
+      <h2> Admin  Info </h2>
+      <h3 th:text="${admin.id}">0</h3>
+      <h3 th:text="${admin.name}"> Lamp </h3>
+      <h3 th:text="${admin.price}">  123.56</h3>
+      <h3 th:text="${admin.quantity}">  22</h3>
+      
+      <h3 th:text="${admin2.id}"></h3>
+      <h3 th:text="${admin2.name}"> Lamp </h3>
+      
+      <h3 th:text="${admin2.userNo}">0</h3>
+      <h3 th:text="${admin2.user}">user1</h3>
+      <h3 th:text="${admin2.comment}">example</h3>
+      <h3 th:text="${admin2.rating}">10</h3> -->
+      
+      
+      <h2>  List of Products </h2>
+      
+      
+      <table border="1" width = 100% style = text-align:center;>
+        <thead>
+            <tr>
+                <td> ID </td>
+                <td> Name </td>
+                <td> Price </td>
+                <td> Quantity </td>
+            </tr>
+            
+        </thead>
+        <tbody>
+            <tr th:if="${products.empty}">
+             <td colspan ="3"> No List available </td>
+            </tr>
+            <tr th:each="product : ${products}"> 
+              <td th:text="${product.id}"> 1 </td>
+              <td th:text="${product.name}"> paper </td>
+              <td th:text="${product.price}"> 20 </td>
+              <td th:text="${product.quantity}"> 5 </td>
+            </tr>
+        
+        </tbody>
+      </table>
+      
+              <h2> Reviews </h2>
+      
+      
+      <table border="1" width = 100% style = text-align:center;>
+        <thead>
+            <tr>
+
+                <td> ID </td>
+                <td> User </td>
+                <td> Comment </td>
+                <td> Rating </td>
+            </tr>
+            
+        </thead>
+        <tbody>
+            <tr th:if="${reviews.empty}">
+             <td colspan ="3"> No List available </td>
+            </tr>
+            <tr th:each="review : ${reviews}">
+            
+<!--              <tr th:each="product : ${products}">  
+              <td th:text="${products.id}"> 1 </td>
+              <td th:text="${products.name}"> paper </td> -->
+              
+              <td th:text="${review.userNo}"> 100 </td>
+              <td th:text="${review.user}"> user1 </td>
+              <td th:text="${review.comment}"> good </td>
+              <td th:text="${review.rating}"> 5 </td>
+            </tr>
+        
+        </tbody>
+      </table>
+            <br>
+            <strong><a href="/">Back to Home</a></strong>
+      </div>
+
+
+</body>
+</html>

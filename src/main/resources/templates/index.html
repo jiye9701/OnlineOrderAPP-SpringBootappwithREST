@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Online System</title>
+<link th:href="@{/styles/css/indexStyleSheet.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id ="allPage"style="width:980px; margin-left:auto; margin-right:auto;">
+<header>
+<h1>Add Products</h1>
+</header>
+
+      
+<form id = "allform" style ="height:500px; text-align:center;" th:action="@{/add}" action="#" th:object="${product}" method="post">
+<br>
+<label for="ID">ID:</label><br>
+<input style="width:400px; height:20px;" type="text" id="id" name="id" placeholder="Enter the Product Id" field="*{id}" required/></p>
+
+  <label for="name">Product name:</label><br>
+  <input style="width:400px; height:20px;" type="text" id="name" name="name" placeholder="Enter the Product Name" field="*{name}" required/><br><br>
+  
+  <label for="price">Price:</label><br>
+  <input style="width:400px; height:20px;" type="text" id="price" name="price" placeholder="Enter the Price" field="*{price}" required/><br><br>
+  
+  <label for="quantity">Quantity:</label><br>
+  <input style="width:400px; height:20px;" type="text" id="quantity" name="quantity" placeholder="Enter the Quantity" field="*{quantity}" required/><br><br>
+  
+  <br>
+  <div style="text-align:center;">
+  <input id="btnAdd" name="btnAdd" type="submit" value="Add Product"/>
+  <br>
+  <br>
+  </div>
+</form>
+      
+      </div>
+</body>
+</html>
